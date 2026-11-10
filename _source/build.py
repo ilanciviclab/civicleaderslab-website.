@@ -108,7 +108,7 @@ home = hero(
     "An institute for a new era of leadership",
     'Setting the new standard for <span class="gold">civic leadership.</span>',
     "We find natural leaders, prepare them to lead America&rsquo;s cities, and share what works so every city can rise.",
-    '<div class="btns"><a class="btn btn-gold" href="fellowship.html">Explore the Fellowship</a><a class="btn btn-ghost" href="manifesto.html">Read the manifesto</a></div>',
+    '<div class="btns"><a class="btn btn-gold" href="fellowship.html">Explore the Fellowship</a><a class="btn btn-ghost" href="manifesto.html">Get the manifesto</a></div>',
     cls="")
 home += f"""
 <section class="band"><div class="wrap split">
@@ -193,113 +193,73 @@ about += f"""
 about += cta("Help set a new standard of leadership.", "Join the small circle of founding partners launching the first Fellowship.")
 
 # ------------------------------------------------------------------ MANIFESTO
-man = hero("The manifesto", "A new standard for <span class=\"gold\">civic leadership.</span>",
-           "The world has changed. The way we lead our cities must change with it.")
+SIGNUP_FORM = """<form class="form signup-card" id="manifesto-form" name="manifesto" method="POST" action="manifesto-thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+<input type="hidden" name="form-name" value="manifesto">
+<p hidden><label>Leave empty <input name="bot-field"></label></p>
+<div><p class="eyebrow" style="margin-bottom:6px">Free &middot; Sent by email</p><h3 style="margin:0">Get the full manifesto</h3></div>
+<div class="field"><label for="m-name">Your name</label><input id="m-name" name="name" autocomplete="name" required></div>
+<div class="field"><label for="m-email">Email</label><input id="m-email" name="email" type="email" autocomplete="email" required></div>
+<div><button class="btn btn-gold" type="submit">Send me the manifesto</button></div>
+<p class="form-note">We will send it to your inbox personally. No spam, and we never share your email.</p>
+<p class="form-done" id="manifesto-done" hidden>Thanks. This is a preview, so nothing was sent. The form goes live once the site is online.</p>
+</form>"""
+
+man = hero("The manifesto", "We have a vision for <span class=\"gold\">America&rsquo;s cities.</span>",
+           "We would love to share it with you. Leave your name and email, and we will send you the full Civic Leaders Lab manifesto.",
+           '<div class="btns"><a class="btn btn-gold" href="#get-it">Send me the manifesto</a></div>')
 man += f"""
 <section class="band"><div class="wrap split">
-<div><p class="eyebrow">The moment</p><h2>People are tired of politics without leadership.</h2></div>
-<div class="prose"><p>They want vision. They want trust. They want character. They want to be heard, and to feel safe in the hands of those who lead them.</p>
-<p>That is where a new kind of leadership can start. Most of today&rsquo;s civic leadership systems were built for another era. They are run by political habit rather than leadership, and they are not keeping pace with the fast-moving human challenges of our age.</p></div>
-</div></section>
-
-<section class="band on-navy"><div class="wrap split">
-<div><p class="eyebrow">What is at stake</p><h2>America&rsquo;s identity is at stake.</h2></div>
-<div class="stack"><div class="prose" style="color:var(--on-navy-muted)">
-<p>America is at risk of losing its American identity.</p>
-<p>Across the country, well-funded and highly organized movements are gaining ground in city halls, often out of sight of the residents they affect. Some of that funding comes from outside the United States.</p>
-<p>Some of these movements are driven by ideologies that openly reject America&rsquo;s founding values, and say plainly that their aim is not to join American life but to replace it. We take them at their word.</p>
-<p>Our answer is to protect what makes America, America: its founding principles, its freedoms, and the right of every person to live by their faith under one law for all.</p></div>
-<div><p class="eyebrow" style="margin-bottom:6px">What they push</p><ul class="bullets">
-<li>Confusion over the most basic truths about gender.</li><li>Weakening the family as the foundation of American life.</li>
-<li>An economy of dependency, asking for money instead of earning it.</li><li>Open-border policies that reward illegal immigration.</li></ul></div>
-<p class="pull">If we do not act boldly now, we risk losing what makes America, America. Our answer is not anger. <span class="gold">It is a new generation of leaders.</span></p>
-</div></div></section>
-
-<section class="band"><div class="wrap">
-<div class="split" style="margin-bottom:36px"><div><p class="eyebrow">Our values</p><h2>Nonpartisan. <span class="gold">Not without values.</span></h2></div>
-<p class="lede" style="margin-top:0">We do not serve a party. Our vision is rooted in the American and Western values that made this country extraordinary, and every leader we develop will carry them.</p></div>
-{rows([("True leadership", "Leaders who serve before they rule, act with character, and deliver real results."),
-       ("Lead with honor", "We build our message on our strength, not on our opponents&rsquo; weakness. No insults, no humiliation, no celebrating others&rsquo; failures. We are honest about our competitors&rsquo; strengths and weaknesses, and we prove why our vision is better."),
-       ("A purpose for every person", "We build the next generation of humanity by leading people to their purpose path."),
-       ("Love of country", "Pride in America&rsquo;s founding principles, and the duty to pass them on stronger than we found them."),
-       ("Love of people and community", "Every resident matters. A city is only as strong as the bonds between its people."),
-       ("Man and woman", "We recognize two sexes, male and female, and honor the dignity of every person."),
-       ("Freedom of faith", "Every person is free to believe, worship, and live by their faith without interference."),
-       ("Prosperity through free enterprise", "Wealth is built by people free to create, compete, and keep the fruits of their work."),
-       ("Equal rights for all", "One standard of rights and opportunity for every citizen, with no exceptions and no favorites."),
-       ("Justice under law", "Laws applied fairly, safe streets, and accountability for everyone, including those in power."),
-       ("Innovation and adaptation", "Embracing new technologies, new ways of thinking, and new ways of living.")])}
-<p class="pull" style="margin-top:36px">We will raise leaders who keep America, America, <span class="gold">and build its future.</span></p>
-</div></section>
-
-<section class="band paper"><div class="wrap split">
-<div><p class="eyebrow">Our vision</p><h2>New standards for civic leadership.</h2></div>
-<div class="stack">{rows([("Leaders, not politicians.", "We believe cities should be led by people with natural leadership ability, ambition, creativity, courage, and a genuine desire to serve."),
-       ("An entrepreneurial spirit.", "Cities should run with efficiency, speed, creativity, critical thinking, and strong growth, always grounded in what residents truly need and want."),
-       ("At the speed of life.", "A city leader&rsquo;s decision can change residents&rsquo; lives within a week. The world is moving forward faster than ever. Leadership and governance must move with it.")])}
-<p class="callout">The standard of public leadership can be raised: <span class="gold">deliberately, visibly, and for good.</span></p></div>
+<div><p class="eyebrow">Why we wrote it</p><h2>People have not stopped caring. <span class="gold">They have stopped believing.</span></h2></div>
+<div class="stack"><div class="prose">
+<p>People are tired of politics without leadership. They want vision. They want trust. They want character. They want to be heard, and to feel safe in the hands of those who lead them.</p>
+<p>We believe that can change, and that it starts in our cities. Not with anger, and not with another party, but with a new generation of leaders who serve before they rule, mean what they say, and deliver results people can see on their own street.</p>
+<p>The manifesto is our promise of what that leadership looks like, and our invitation to build it together.</p></div>
+<p class="pull">Better leaders. Better systems. <span class="gold">Better cities.</span></p></div>
 </div></section>
 
 <section class="band on-navy"><div class="wrap">
-<p class="eyebrow">The new standard</p><h2>Flip the ratio.</h2>
-<p class="lede">Politics is part of governing. It should never become its purpose.</p>
-{RATIO}
-</div></section>
-
-<section class="band"><div class="wrap split">
-<div><p class="eyebrow">Authenticity over political correctness</p><h2>Mean what you say. <span class="gold">Say what you mean.</span></h2></div>
-<div class="stack"><div class="prose">
-<p>Political correctness began as a tool of politics: a way to communicate, negotiate, and keep tensions low. Over time it became a norm, and then an expectation. Rules about what you can and cannot say, whether you mean it or not, just to avoid offending the other side or inflaming the moment.</p>
-<p>That is the opposite of authenticity. It is the opposite of integrity. Leaders who weigh every word to avoid offense slowly stop telling people the truth, and people can feel it.</p>
-<p>Diplomacy has its place at the negotiating table. It cannot be our vision, our public policy, or the standard for our society.</p></div>
-<p class="callout" style="font-style:normal;font-family:var(--display);font-weight:600">Honesty and respect are not opposites.<br><span class="gold">We will lead with both, never with scripts.</span></p></div>
-</div></section>
-
-<section class="band paper"><div class="wrap split">
-<div><p class="eyebrow">Why cities</p><h2>Cities are the laboratories of the future.</h2></div>
-<div class="stack"><div class="prose">
-<p>At the city level, leadership becomes visible. Residents see it in the park, the street, the permit process, the neighborhood, the public space, and the quality of everyday government. They can trace the line from a decision, to an action, to a result.</p>
-<p>That is why residents should never simply receive government decisions. They deserve to understand them, feel their impact, influence them, and help shape what comes next.</p></div>
-<div class="process" style="margin-top:0"><span>DECISION</span><i>&rarr;</i><span>ACTION</span><i>&rarr;</i><span>RESULT</span></div>
-<p class="pull">Cities can become places where ideas are tested quickly, results are measured clearly, mistakes are corrected honestly, and successful models are shared openly.</p></div>
-</div></section>
-
-<section class="band"><div class="wrap split">
-<div><p class="eyebrow">Why now</p><h2>People have not stopped caring. <span class="gold">They have stopped believing.</span></h2></div>
-<div class="stack">
-<div><div class="stat-num" style="color:var(--navy)">72,000</div><p class="stat-cap">votes cast in the June 2024 Las Vegas mayoral primary, in a city of more than 640,000 residents.</p></div>
-<div class="prose"><p>People don&rsquo;t believe in politics, so they don&rsquo;t show up. Across America&rsquo;s largest cities, the typical mayoral voter is close to 60 years old, and voters over 65 are about ten times more likely to vote than those aged 18 to 34.</p>
-<p>That silence is not apathy. It is an opening. It means a new vision can reach the people politics has never reached, especially voters between 18 and 40, who vote least and have the most future at stake.</p></div>
-<p class="callout">We will engage a new generation of voters with new ideas, <span class="gold">fitted to who they are, and to where the world is going.</span></p></div>
-</div></section>
-
-<section class="band on-navy"><div class="wrap">
-<p class="eyebrow">The AI revolution</p><h2>Leadership for the <span class="gold">age of AI.</span></h2>
-<p class="lede">The world is moving into the AI revolution. In every area of city life, it opens a new opportunity: to know residents better, understand their struggles, and shape solutions around each of them.</p>
-<div class="grid-3" style="margin-top:36px">
-<div class="cell"><h4>Know every resident</h4><p>Understand the needs, wants, struggles, and problems of the people we serve.</p></div>
-<div class="cell"><h4>Personal service</h4><p>Treat every resident like a valued customer, with help tailored to them.</p></div>
-<div class="cell"><h4>See problems early</h4><p>Identify problems before they happen, and act before they grow.</p></div>
-<div class="cell"><h4>Faster, better solutions</h4><p>Solve problems in days, not months, with answers that fit each case.</p></div>
-<div class="cell"><h4>A more efficient city</h4><p>Less waste, less bureaucracy, more results for every dollar.</p></div>
-<div class="cell"><h4>Growth for every adult</h4><p>Personal programs for adults who truly want to change their lives.</p></div>
+<div class="split" style="margin-bottom:36px"><div><p class="eyebrow">Inside the manifesto</p><h2>A new standard for <span class="gold">civic leadership.</span></h2></div>
+<p class="lede" style="margin-top:0">A short, honest read about where America&rsquo;s cities are, and where we believe they can go.</p></div>
+<div class="grid-3">
+<div class="cell"><span class="k">The moment</span><p>Why so many people have stopped believing in politics, and why that silence is an opening, not an ending.</p></div>
+<div class="cell"><span class="k">What is at stake</span><p>What America risks losing if we do not act boldly now, and what we will do to protect it.</p></div>
+<div class="cell"><span class="k">Our values</span><p>Nonpartisan, but never without values: love of country, freedom of faith, justice under law, and leading with honor.</p></div>
+<div class="cell"><span class="k">Flip the ratio</span><p>Leadership first, politics second. Why the leaders we need should spend 80% of their energy on vision, people and results.</p></div>
+<div class="cell"><span class="k">Leadership for the age of AI</span><p>How cities can know every resident, see problems early, and solve them in days instead of months.</p></div>
+<div class="cell"><span class="k">The New Standard</span><p>The commitments that define the leaders we will raise, and the city pilots we will test, measure and share.</p></div>
 </div>
-<p class="pull" style="margin-top:36px;color:var(--on-navy)">AI can be a powerful force for good. <span class="gold">We will master it, and keep it working for people, always.</span></p>
 </div></section>
 
-<section class="band"><div class="wrap">
-<div class="split" style="margin-bottom:36px"><div><p class="eyebrow">Our commitments</p><h2>The New Standard.</h2></div>
-<p class="lede" style="margin-top:0">The commitments that define the leadership we will build, test, and share.</p></div>
-{rows([("Leadership before politics.", "Politics is part of governing. It must never become its purpose. Vision, people, responsibility, and results come first."),
-       ("Residents first.", "Every system is measured by the quality of life it creates for the people it serves."),
-       ("An entrepreneurial spirit.", "Government does not need to become a business. But it can ask what great entrepreneurs ask: What problem are we solving? Who are we serving? Can this be simpler? How do we measure success?"),
-       ("Public value is the return.", "In business, the return may be profit. In public service, it is a better quality of life, greater opportunity, stronger communities, and greater trust."),
-       ("The right people in the right roles.", "Better systems begin with people who know where they are strongest, placed where their strengths create the greatest value."),
-       ("Test, measure, improve.", "Ideas become pilots. Pilots become evidence, measured with data and AI. Evidence becomes the model."),
-       ("Share openly.", "If a solution works, it should not belong to one city. What works is shared. What fails is documented. What can be improved invites collaboration.")])}
+<section class="band paper" id="get-it"><div class="wrap split">
+<div class="stack"><div><p class="eyebrow">Join us</p><h2>Be one of the first to read it.</h2></div>
+<div class="prose"><p>This vision belongs to everyone who wants their city to rise: residents, future leaders, and partners who believe America&rsquo;s best days can still be ahead.</p>
+<p>Tell us where to send it, and the manifesto will arrive in your inbox from our founder, Ilan Gelberg.</p></div>
+<p class="callout">The future of our cities will be shaped by the people willing to lead them. <span class="gold">Let&rsquo;s build that future together.</span></p></div>
+{SIGNUP_FORM}
+</div></section>
+<script>
+(function () {{
+  var live = /(civicleaderslab\\.org|netlify\\.app)$/.test(location.hostname);
+  document.getElementById('manifesto-form').addEventListener('submit', function (e) {{
+    if (live) return;
+    e.preventDefault();
+    document.getElementById('manifesto-done').hidden = false;
+  }});
+}})();
+</script>
+"""
+
+thanks = hero("Thank you", "The manifesto is <span class=\"gold\">on its way.</span>",
+              "Thank you for wanting to be part of this. We will email the full Civic Leaders Lab manifesto to you shortly.")
+thanks += f"""
+<section class="band"><div class="wrap split">
+<div><p class="eyebrow">While you wait</p><h2>See how the vision becomes real.</h2></div>
+<div class="stack"><div class="prose"><p>The manifesto is where it starts. The Fellowship is how we turn it into leaders, and the city pilots are how we prove it works.</p>
+<p>Did not get it within a day? Check your spam folder, or write to us at {EMAIL}.</p></div>
+<div class="btns" style="margin-top:0"><a class="btn btn-navy" href="fellowship.html">Explore the Fellowship</a><a class="btn btn-ghost" href="about.html">Meet the founder</a></div></div>
 </div></section>
 """
-man += cta("The future of our cities will be shaped by the people willing to lead them.", "Let&rsquo;s build that future together.")
+thanks += cta("Want to help launch the first Fellowship?", "Join the small circle of founding partners building this from day one.")
 
 # ------------------------------------------------------------------ FELLOWSHIP
 def phase(m, t, tag, text, tags, alt=False):
@@ -474,7 +434,8 @@ os.makedirs(OUT, exist_ok=True)
 D = "Civic Leaders Lab is a nonpartisan leadership institute that finds natural leaders and prepares them to lead America's cities."
 page("index.html", ORG, D, home)
 page("about.html", f"About | {ORG}", D, about)
-page("manifesto.html", f"Manifesto | {ORG}", "A new standard for civic leadership: the Civic Leaders Lab manifesto.", man)
+page("manifesto.html", f"Manifesto | {ORG}", "We have a vision for America's cities. Get the Civic Leaders Lab manifesto by email.", man)
+page("manifesto-thanks.html", f"Thank you | {ORG}", "The Civic Leaders Lab manifesto is on its way.", thanks)
 page("fellowship.html", f"The Fellowship | {ORG}", "A twelve-month program that turns potential into civic leadership.", fel)
 page("work.html", f"Our work | {ORG}", "What Civic Leaders Lab will build: a leadership model, a fellowship, an innovation lab, and open playbooks.", work)
 page("support.html", f"Founding partners | {ORG}", "Help launch the first year of Civic Leaders Lab in Las Vegas.", sup)
