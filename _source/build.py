@@ -7,7 +7,7 @@ OUT = sys.argv[1]
 PREVIEW = "--preview" in sys.argv
 HERE = os.path.dirname(os.path.abspath(__file__))
 ORG = "Civic Leaders Lab"
-EMAIL = "hello@civicleaderslab.org"
+EMAIL = "ilan@civicleaderslab.org"
 
 NAV = [("index.html", "Home"), ("about.html", "About"), ("manifesto.html", "Manifesto"),
        ("fellowship.html", "Fellowship"), ("work.html", "Our work"), ("contact.html", "Contact")]
@@ -202,10 +202,12 @@ man += f"""
 </div></section>
 
 <section class="band on-navy"><div class="wrap split">
-<div><p class="eyebrow">What is at stake</p><h2>A worrying trend.</h2></div>
+<div><p class="eyebrow">What is at stake</p><h2>America&rsquo;s identity is at stake.</h2></div>
 <div class="stack"><div class="prose" style="color:var(--on-navy-muted)">
-<p>Over the past four years, radical left socialist movements have been gaining ground in city halls across America, through well-funded, highly organized efforts that most residents never see.</p>
-<p>Much of that funding moves quietly, and some of it originates outside the United States. Its aim is to place city leaders who would change what America is, one city at a time.</p></div>
+<p>America is at risk of losing its American identity.</p>
+<p>Across the country, well-funded and highly organized movements are gaining ground in city halls, often out of sight of the residents they affect. Some of that funding comes from outside the United States.</p>
+<p>Some of these movements are driven by ideologies that openly reject America&rsquo;s founding values, and say plainly that their aim is not to join American life but to replace it. We take them at their word.</p>
+<p>Our answer is to protect what makes America, America: its founding principles, its freedoms, and the right of every person to live by their faith under one law for all.</p></div>
 <div><p class="eyebrow" style="margin-bottom:6px">What they push</p><ul class="bullets">
 <li>Confusion over the most basic truths about gender.</li><li>Weakening the family as the foundation of American life.</li>
 <li>An economy of dependency, asking for money instead of earning it.</li><li>Open-border policies that reward illegal immigration.</li></ul></div>
