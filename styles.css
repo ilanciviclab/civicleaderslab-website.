@@ -62,7 +62,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 68px; flex-wrap: wrap; padding-block: 10px; }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-family: var(--display); font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em; }
-.brand-mark { width: 30px; height: 30px; flex: none; }
+.brand-mark { width: 34px; height: 34px; flex: none; }
 .brand span b { color: var(--gold-soft); font-weight: 700; }
 .nav { display: flex; gap: 4px; overflow-x: auto; max-width: 100%; scrollbar-width: none; }
 .nav::-webkit-scrollbar { display: none; }
