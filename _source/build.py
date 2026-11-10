@@ -12,7 +12,7 @@ EMAIL = "ilan@civicleaderslab.org"
 NAV = [("index.html", "Home"), ("about.html", "About"), ("manifesto.html", "Manifesto"),
        ("fellowship.html", "Fellowship"), ("work.html", "Our work"), ("contact.html", "Contact")]
 
-MARK = """<svg class="brand-mark" viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="2" fill="#1b2f5e"/><polyline points="4,23 9,17 12,20 15,8 18,19 21,14 26,23" fill="none" stroke="#e2b85a" stroke-width="2" stroke-linejoin="round"/><circle cx="15" cy="8" r="2" fill="#e2b85a"/></svg>"""
+MARK = """<svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="48" fill="#1b2f5e" stroke="#2c4174" stroke-width="2"/><path d="M50 13 L54.2 35.8 L70 40 L54.2 44.2 L50 60 L45.8 44.2 L30 40 L45.8 35.8Z" fill="#e2b85a"/><rect x="12" y="66" width="76" height="3" fill="#e2b85a"/><rect x="22" y="74" width="56" height="2.2" fill="#eef0f6" opacity=".45"/><rect x="32" y="81" width="36" height="2.2" fill="#eef0f6" opacity=".3"/></svg>"""
 
 SKYLINE = """<svg class="skyline" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
 <line class="grid" x1="900" y1="40" x2="900" y2="220"/><line class="grid" x1="960" y1="10" x2="960" y2="220"/><line class="grid" x1="1010" y1="60" x2="1010" y2="220"/><line class="grid" x1="1090" y1="30" x2="1090" y2="220"/><line class="grid" x1="1180" y1="80" x2="1180" y2="220"/>
@@ -50,6 +50,7 @@ def page(fname, title, desc, body):
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta property="og:title" content="{title}"><meta property="og:description" content="{desc}">
 {FONTS}
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">"""
     content = header(fname) + "<main>" + body + "</main>" + FOOTER
     if PREVIEW and fname == "index.html":
