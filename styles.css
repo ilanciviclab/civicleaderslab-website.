@@ -286,3 +286,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .site-footer a:hover { color: var(--on-navy); }
 .site-footer .legal { grid-column: 1 / -1; border-top: 1px solid var(--navy-line); padding-top: 20px; font-size: 0.8rem; line-height: 1.55; }
 .foot-tag { font-family: var(--serif); font-style: italic; margin-top: 10px; }
+
+/* ---- manifesto sign-up card ---- */
+.signup-card { background: var(--paper); border: 1px solid var(--rule); border-top: 4px solid var(--gold); padding: clamp(22px, 4vw, 36px); border-radius: 3px; box-shadow: 0 10px 30px rgba(19, 35, 74, 0.08); max-width: none; }
+.paper .signup-card { background: #fff; }
